@@ -14,17 +14,25 @@ const images = [
   },
 ];
 
-const firstEl = document.createElement('li')
-firstEl.textContent = images[0]
-
-const secondEl = document.createElement('li')
-secondEl.textContent = images[1]
-
-const thirdEl = document.createElement('li')
-thirdEl.textContent = images[2]
-
-
-
-
 const galleryList = document.querySelector('#gallery')
 console.log(galleryList);
+
+
+const array = []
+images.forEach((el) => {
+const navElOne = document.createElement('li')
+  const imageElOne = document.createElement('img')
+  
+  imageElOne.src = el.url;
+  imageElOne.alt = el.alt;
+  imageElOne.width = 640;
+  navElOne.appendChild(imageElOne)
+ array.push(navElOne)
+})
+
+
+galleryList.append( ...array)
+galleryList.classList.add('picture')
+
+
+
