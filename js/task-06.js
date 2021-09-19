@@ -5,9 +5,9 @@ const refs = {
 refs.inputLink.addEventListener('blur', onInputBlur)
 function onInputBlur(event) {
     
-    if (event.currentTarget.value.length === 6) {
-        refs.inputLink.classList.add('valid')
-    } else {
+  event.currentTarget.value.length === 6? 
+        refs.inputLink.classList.add('valid'):
+    
        
         refs.inputLink.classList.add('invalid')
 
@@ -15,4 +15,3 @@ function onInputBlur(event) {
      
         
     console.log('потеря фокуса');
-}
